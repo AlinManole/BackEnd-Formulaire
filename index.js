@@ -7,10 +7,8 @@ app.engine("handlebars", engine())
 app.set('view engine', 'handlebars')
 app.use(express.urlencoded({ extended: true }))
 
-app.get('/', function(req, res) {
-    res.render('home', {
-      title: 'Ma homepage'
-    });
+app.get('/', (req, res) => {
+    res.render('home');
   });
 
   app.post('/signup', (req, res) => {
@@ -20,9 +18,7 @@ app.get('/', function(req, res) {
     res.render('signup', {
       name: username, 
     })
-    
-    // res.redirect('/')
-  
+
   })
 
 app.listen(port, () => {
